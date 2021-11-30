@@ -15,7 +15,14 @@ https://github.com/coolf/sunshine
 
 ## 注意事项
 
+
+
 PHP >= 7.2
+
+在Typecho 跟目录安装 twig
+```php
+composer require "twig/twig:^3.0"
+```
 
 到 Github 下载，点击"Download ZIP"下载，解压后将文件夹改名为`sunshine`后上传到 `/usr/themes`，并启用主题。
 
