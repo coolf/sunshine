@@ -1,0 +1,54 @@
+<section class="pt-page pt-page-4 pt-page-current">
+    <div class="section-title-block">
+        {% if data.index %}
+            <h2 class="section-title">首页</h2>
+            <h5 class="section-description">{{ header.description }}</h5>
+        {% else %}
+            <h2 class="section-title">{{ data.categories.name }}</h2>
+            <h5 class="section-description">{{ data.categories.description }}</h5>
+        {% endif %}
+    </div>
+    <div class="blog-masonry">
+        <!-- Blog Post 1 -->
+        {% for post in data.post %}
+            <div class="item">
+                <div class="blog-card">
+                    <div class="media-block">
+                        <a href="{{ post.url }}">
+                            <img class="post-image img-responsive"
+                                 src="{{ header.themeUrl }}/templates/images/blog/blog_post_1.jpg"
+                                 alt="blog-post-1"/>
+                            <div class="mask"></div>
+                            <div class="post-date">
+                                <span class="day">{{ post.date|date("d") }}</span>
+                                <span class="month">{{ post.date|date("M") }}</span>
+                                {# <span class="year">{{ post.date|date("Y") }}</span> #}
+                            </div>
+                        </a>
+                    </div>
+                    <div class="post-info">
+                        <ul class="category">
+                            <li>
+                                {% autoescape false %}
+                                    {{ post.content }}
+                                {% endautoescape %}
+                            </li>
+                        </ul>
+                        <a href="{{ post.url }}"><h4 class="blog-item-title">{{ post.title }}</h4></a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        <!-- End of Blog Post 1 -->
+    </div>
+
+    {#  分页   #}
+    {% include 'common/pages.html' %}
+
+
+    {# footer   #}
+{#    {% include 'common/footer.html' %}#}
+
+</section>
+
+

@@ -1,0 +1,17 @@
+<div id="zan-page">
+    <ul class="pagination pagination-zan">
+        {% if not data.page.home is null %}
+            <a href="{{ data.page.query |replace({'{page}':data.page.home}) }}"><<</a>
+        {% endif %}
+        {% for pageNum in range(data.page.from,data.page.to) %}
+            {% if pageNum == data.page.current %}
+                <span>{{ pageNum }}</span>
+            {% else %}
+                <a href="{{ data.page.query | replace({'{page}':pageNum}) }}">{{ pageNum }}</a>
+            {% endif %}
+        {% endfor %}
+        {% if not data.page.end is null %}
+            <a href="{{ data.page.query | replace({'{page}':data.page.end}) }}">>></a>
+        {% endif %}
+    </ul>
+</div>

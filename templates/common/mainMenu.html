@@ -1,0 +1,16 @@
+<div class="site-nav mobile-menu-hide">
+    <!-- Main menu -->
+    <ul id="nav" class="site-main-menu">
+        {% for menu in header.navMenu %}
+            {% if menu.select %}
+                <li class="active">
+            {% else %}
+                <li>
+            {% endif %}
+            <a class="pt-trigger" href="{{ menu.url }}"
+               data-animation="{{ 58+ loop.index0 }}">{{ menu.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <!-- /Main menu -->
+</div>

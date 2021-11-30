@@ -1,0 +1,38 @@
+{% include 'common/header.html' %}
+
+<body>
+<!-- Loading animation -->
+{% include 'common/loading.html' %}
+<!-- /Loading animation -->
+<div id="page" class="page">
+    <!-- Header -->
+    {% include 'common/leftHead.html' %}
+    <!-- /Header -->
+
+    <!-- Main Content -->
+    <div id="main" class="site-main">
+        <!-- Page changer wrapper -->
+        <div class="pt-wrapper">
+            <!-- Navigation & Social buttons -->
+            {% include 'common/mainMenu.html' %}
+            <!-- Navigation & Social buttons -->
+            <!-- Subpages -->
+            <div class="subpages">
+                <!-- Blog Subpage -->
+                {% include 'common/mainBlog.html' %}
+                <!-- End Blog Subpage -->
+            </div>
+            {% include 'common/footer.html' %}
+        </div>
+        <!-- /Page changer wrapper -->
+
+
+    </div>
+    <!-- /Main Content -->
+
+</div>
+
+{% include 'common/js.html' %}
+
+</body>
+</html>
